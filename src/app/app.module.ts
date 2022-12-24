@@ -8,6 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductCardListComponent } from './dashboard/product-card-list/product-card-list.component';
 import { ProductCardComponent } from './dashboard/product-card-list/product-card/product-card.component';
 import { ProductDetailComponent } from './dashboard/product-detail/product-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductEditComponent } from './product-list/product-edit/product-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module'
 
 @NgModule({
   declarations: [
@@ -16,11 +20,17 @@ import { ProductDetailComponent } from './dashboard/product-detail/product-detai
     DashboardComponent,
     ProductCardListComponent,
     ProductCardComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductListComponent,
+    ProductEditComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
