@@ -1,0 +1,66 @@
+.card {
+    height: 350px;
+    width: 290px;
+    border: 1px solid #0000004d;
+}
+
+.card .image {
+    height: 130px;
+    width: 288px;
+    border: 1px solid #0000004d;
+}
+
+.card .image img {
+    height: 100%;
+    width: 100%;
+}
+
+.card .content {
+    margin-top: 25px;
+}
+
+.card .content h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.card .content p {
+    text-transform: uppercase;
+}
+
+.card .content .button {
+    color: #fff;
+    background: #9574ad;
+    border: 1px solid #9574ad;
+    padding: 4px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.card .add-cart {
+    display: flex;
+    margin-top: 36px;
+    justify-content: space-around;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-top: 1px solid #0000004d;
+    padding-top: 5px;
+
+}
+
+.card .add-cart a {
+    margin-bottom: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.card .add-cart a span {
+    font-size: 20px;
+}
+
+.card .add-cart .minus {}
+
+.card .add-cart .add {}
+
+.card .add-cart .plus {}

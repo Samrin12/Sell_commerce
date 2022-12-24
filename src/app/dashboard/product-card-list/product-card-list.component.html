@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-3 mb-5" *ngFor="let prod of products">
+            <section class="card">
+                <div class="image">
+                    <img src="{{prod.imagePath}}" class="img-fluid" alt="">
+                </div>
+                <div class="content text-center">
+                    <h3>{{prod.name}}</h3>
+                    <p>Price: {{prod.price}}</p>
+                    <a href="" class="btn button">show detail</a>
+                </div>
+                <div class="add-cart">
+                    <div class="minus">
+                        <a href=""><span>-</span></a>
+                    </div>
+                    <div class="add">
+                        <a href="">add to cart</a>
+                    </div>
+                    <div class="plus">
+                        <a href=""><span>+</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
