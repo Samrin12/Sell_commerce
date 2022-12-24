@@ -1,0 +1,11 @@
+.header {
+    border-bottom: solid 1px #00000029;
+    margin-bottom: 30px;
+}
+
+.header .nav-link {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 400;
+}
