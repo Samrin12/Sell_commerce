@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-// import { product } from '../shared/product.model'
+import { product } from '../shared/product.model'
 
-export interface product {
-  name: string;
-  price: string;
-  category: string;
-  imagePath: string;
-}
+// export interface product {
+//   name: string;
+//   price: string;
+//   category: string;
+//   imagePath: string;
+// }
 
 
 

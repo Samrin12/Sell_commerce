@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
-const materialComponents = [MatSlideToggleModule, MatTableModule];
+import { MatButtonModule } from '@angular/material/button';
+const materialComponents = [MatSlideToggleModule, MatTableModule, MatButtonModule];
 
 
 @NgModule({

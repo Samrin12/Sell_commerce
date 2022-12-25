@@ -1,3 +1,30 @@
 table {
     width: 100%;
+    border-top: solid #00000020;
+}
+
+h1 {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-bottom: 8px;
+    background: #9574ad6b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.add_btn {
+    color: #fff;
+    background-color: #9574ad;
+    border: 1px solid #9574ad;
+    margin-left: 66%;
+}
+
+.add_btn a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
 }
