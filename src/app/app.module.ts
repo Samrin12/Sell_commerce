@@ -11,7 +11,8 @@ import { ProductDetailComponent } from './dashboard/product-detail/product-detai
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-list/product-edit/product-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module'
+import { MaterialModule } from './material/material.module';
+import { AddFormComponent } from './add-form/add-form.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MaterialModule } from './material/material.module'
     ProductCardComponent,
     ProductDetailComponent,
     ProductListComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    AddFormComponent
 
   ],
   imports: [
