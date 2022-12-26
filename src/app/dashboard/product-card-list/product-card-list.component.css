@@ -36,7 +36,7 @@
     margin-top: 10px;
 }
 
-/* .card .content a {
+.card .content a {
     color: #fff;
     text-decoration: none;
     background: #9574ad;
@@ -44,7 +44,7 @@
     text-transform: uppercase;
     padding: 3px 10px;
     border-radius: 10;
-} */
+}
 
 
 .card .add-cart {

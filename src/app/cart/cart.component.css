@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+    border-top: solid #00000020;
+}
+
+.prod-list {
+    margin-top: -2%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+
+.action {
+    text-align: center;
+}
+
+h1 {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-bottom: 30px;
+    background: #9574ad6b;
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+}
+
+.add_btn {
+    color: white;
+    background-color: #9574ad;
+    border: 1px solid #9574ad;
+    margin-left: 66%;
+    text-transform: capitalize;
+}
+
+.add_btn a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.pagination {
+    border: 1px solid #00000045;
+    margin-bottom: 80px;
+}

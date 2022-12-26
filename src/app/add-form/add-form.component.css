@@ -7,10 +7,25 @@ h1 {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 40%;
-    margin: 1% auto 5%;
+    margin: 1% auto 2%;
 
+}
+
+input {
+    margin-bottom: 10px;
 }
 
 label {
     text-transform: uppercase;
+    margin-top: 20px;
+}
+
+button {
+    color: white;
+    background-color: #9574ad;
+    border: 1px solid #9574ad;
+    text-transform: uppercase;
+    margin-top: 20px;
+    padding: 5px 20px;
+    border-radius: 5px;
 }

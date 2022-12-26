@@ -7,7 +7,16 @@
     margin-top: -2%;
 }
 
-.footer {}
+h1 {
+    color: #46106f;
+    font-size: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: #a095a8c7;
+    padding: 20px 50px;
+    border-radius: 43px;
+    margin-top: 20%;
+}
 
 footer p {
     color: #9574ad;
