@@ -32,17 +32,27 @@
     color: #fff;
     background: #9574ad;
     border: 1px solid #9574ad;
-    padding: 4px 10px;
-    border-radius: 10px;
     text-transform: uppercase;
+    margin-top: 10px;
 }
+
+/* .card .content a {
+    color: #fff;
+    text-decoration: none;
+    background: #9574ad;
+    border: 1px solid #9574ad;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 10;
+} */
+
 
 .card .add-cart {
     display: flex;
     margin-top: 36px;
     justify-content: space-around;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: capitalize;
     border-top: 1px solid #0000004d;
     padding-top: 5px;

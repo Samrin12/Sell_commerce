@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row mb-3">
+    <div class="row mt-5 mb-3">
         <div class="col-md-3 mb-5" *ngFor="let prod of products">
             <section class="card">
                 <div class="image">
@@ -8,7 +8,11 @@
                 <div class="content text-center">
                     <h3>{{prod.name}}</h3>
                     <p>Price: {{prod.price}}</p>
-                    <a href="" class="btn button">show detail</a>
+                    <!-- <button mat-stroked-button class="button" (click)="goToDetail()"><a href=""
+                            routerLink="/detail/{{prod.no}}">see
+                            detail</a></button> -->
+                    <a href="" [routerLink]="'detail'">see
+                        detail</a>
                 </div>
                 <div class="add-cart">
                     <div class="minus">
@@ -25,3 +29,4 @@
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>

@@ -1,1 +1,68 @@
-<p>add-form works!</p>
+<div class="container">
+    <div class="row text-center">
+        <h1>Product Detail form</h1>
+    </div>
+    <div class="form">
+        <form [formGroup]="reactiveForm" (ngSubmit)="submit()">
+            <!-- (ngSubmit)="submit()" -->
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <label for="name">product name</label>
+                    <input type="text" name="name" class="form-control" formControlName="name">
+                    <label for="psc">product short code</label>
+                    <input type="text" formControlName="shortCode" class="form-control" name="psc">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" size="1" class="form-control" formControlName="category">
+                        <option value="snack">snack</option>
+                        <option value="vegetable">vegetable</option>
+                        <option value="fruit">fruit</option>
+                        <option value="beverage">beverage</option>
+                    </select><br><br>
+                    <label for="price">price</label>
+                    <input type="number" name="price" class="form-control" min="1" formControlName="price">
+                    <label for="countInStock">Amount of Product</label>
+                    <input type="number" name="countInStock" class="form-control" min="1"
+                        formControlName="countInStock">
+                    <label for="desc">description</label>
+                    <textarea name="desc" id="" class=" form-control" cols="30" rows="10"
+                        formControlName="description"></textarea>
+                    <label for="image">upload image</label>
+                    <input type="file" class="form-control" formControlName="image">
+                    <label for="isbest">Is the product of the best quality?</label><br>
+                    <!-- <input type="text" formControlName="isBest" class="form-control" name="isBest"> -->
+                    <label for="yes">yes</label>
+                    <input type="checkbox" name="isBest" value="true" formControlName="isBest">
+                    <label for="no">no</label>
+                    <input type="checkbox" name="isBest" value="false" formControlName="isBest">
+                    <br>
+                    <label for="date">date</label>
+                    <input type="date" name="date" [max]="maxDate" formControlName="date" class="form-control">
+
+                    <label for="origin">origin</label>
+                    <select id="origin" name="origin" size="1" class="form-control" formControlName="origin">
+                        <option value="bd">bangladesh</option>
+                        <option value="india">india</option>
+                        <option value="us">USA</option>
+                    </select>
+
+
+
+
+                    <!-- <input type="submit" name="submit"> -->
+
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+<!-- ProductName (required, min-3, max-50)
+ProductShortCode (required, min-3, max-50)
+Category (required, Dropdown)
+Price (required, Number)
+Description (optional, min-3, max-250)
+ImageUrl (string, optional)
+IsBestAchived (boolean)
+CreatedDate (Date picker) (required, max-current-date)
+Origin (required, Dropdown)
+ -->

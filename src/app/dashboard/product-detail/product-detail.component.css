@@ -1,0 +1,47 @@
+h1 {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    background: #9574ad6b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 40%;
+    margin: 1% auto 5%;
+
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+}
+
+.content {}
+
+.content h3 {
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.content h5 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.content h6 {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #000000a6;
+    font-weight: 400;
+}
+
+.content p {
+    font-size: 16px;
+    font-weight: 400;
+}

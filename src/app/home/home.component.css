@@ -1,0 +1,18 @@
+.banner {
+    background-image: url(src/assets/images/banner6.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    margin-top: -2%;
+}
+
+.footer {}
+
+footer p {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 10px;
+}

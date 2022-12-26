@@ -1,0 +1,16 @@
+h1 {
+    color: #9574ad;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    background: #9574ad6b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 40%;
+    margin: 1% auto 5%;
+
+}
+
+label {
+    text-transform: uppercase;
+}

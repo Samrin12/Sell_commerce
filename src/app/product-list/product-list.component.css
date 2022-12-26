@@ -3,6 +3,19 @@ table {
     border-top: solid #00000020;
 }
 
+.prod-list {
+    margin-top: -2%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+
+.action {
+    text-align: center;
+}
+
 h1 {
     color: #9574ad;
     text-transform: uppercase;
@@ -17,14 +30,20 @@ h1 {
 }
 
 .add_btn {
-    color: #fff;
+    color: white;
     background-color: #9574ad;
     border: 1px solid #9574ad;
     margin-left: 66%;
+    text-transform: capitalize;
 }
 
 .add_btn a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.pagination {
+    border: 1px solid #00000045;
+    margin-bottom: 80px;
 }
