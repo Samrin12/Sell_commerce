@@ -33,9 +33,7 @@ export class ProductListComponent implements AfterViewInit {
 
   ngOnInit(): void {
     // this.products = this.productDetailService.getProducts();
-    this.productDetailService.getProducts().subscribe((prod: string[]) => {
-      this.products = prod;
-    })
+    this.getProd()
   }
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -47,6 +45,16 @@ export class ProductListComponent implements AfterViewInit {
   goToForm() {
     this.route.navigate(['form']);
   }
+  deleteProd(id: string) {
+    this.productDetailService.deleteProduct(id).subscribe(Response => {
 
+    })
+  }
+
+  private getProd() {
+    this.productDetailService.getProducts().subscribe((prod: string[]) => {
+      this.products = prod;
+    })
+  }
 
 }

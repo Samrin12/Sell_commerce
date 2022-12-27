@@ -25,3 +25,21 @@ footer p {
     font-weight: 600;
     padding-top: 10px;
 }
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background: #9574ad;
+    border: 1px solid #9574ad;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 10;
+}
+
+button {
+    color: #fff;
+    background: #9574ad;
+    border: 1px solid #9574ad;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
