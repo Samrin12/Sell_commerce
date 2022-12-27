@@ -13,8 +13,8 @@ import { ProductDetailService } from 'src/app/product-detail.service';
   providers: [ProductDetailService]
 })
 export class ProductListComponent implements AfterViewInit {
-  public products: product[] = [];
-  // products: product[] = this.productDetailService.getProducts();
+  // public products: product[] = [];
+  products: any = this.productDetailService.getProducts();
 
   //sort and pagination
   displayedColumns: string[] = ['no', 'name', 'price', 'category', 'action'];
@@ -33,7 +33,7 @@ export class ProductListComponent implements AfterViewInit {
 
   ngOnInit(): void {
     // this.products = this.productDetailService.getProducts();
-    this.productDetailService.getProducts().subscribe(prod => {
+    this.productDetailService.getProducts().subscribe((prod: string[]) => {
       this.products = prod;
     })
   }

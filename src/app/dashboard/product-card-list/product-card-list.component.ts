@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from 'src/app/shared/product.model';
 import { ProductDetailService } from 'src/app/product-detail.service';
@@ -10,11 +10,13 @@ import { ProductDetailService } from 'src/app/product-detail.service';
   providers: [ProductDetailService]
 })
 
-export class ProductCardListComponent {
+export class ProductCardListComponent implements OnInit {
+  @Input() singleproduct: any;
+  @Output() selectedprod = new EventEmitter<void>();
   constructor(private route: Router, private productDetailService: ProductDetailService) {
 
   }
-  products: product[] = [];
+  products: any = [];
 
   ngOnInit(): void {
     this.productDetailService.getProducts().subscribe(prod => {
@@ -22,7 +24,12 @@ export class ProductCardListComponent {
     })
   }
 
+  onSelected() {
+    this.selectedprod.emit();
+  }
+  onproductSelection(product: product) {
 
+  }
   goToDetail() {
     this.route.navigate(['detail']);
   }

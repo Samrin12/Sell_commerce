@@ -11,7 +11,7 @@ import { ProductDetailService } from 'src/app/product-detail.service';
   providers: [ProductDetailService]
 })
 export class AddFormComponent implements OnInit {
-
+  isSubmitted: boolean = false;
   reactiveForm: FormGroup;
 
 
@@ -76,6 +76,7 @@ export class AddFormComponent implements OnInit {
 
 
   submit() {
+    this.isSubmitted = true;
     const fv = this.reactiveForm.value;
     console.log(fv.name)
     console.log(fv.isBest)
@@ -91,10 +92,11 @@ export class AddFormComponent implements OnInit {
       isBest: fv.isBest,
       date: fv.date,
       origin: fv.origin
-    };
-    //   this.Service.postPorduct(product).subscribe((_) => {
-    //     console.log('data posted successfully');
-    //   });
-    // }
-  }
+    }
+    this.Service.createProduct(product).subscribe();
+  };
+
+
+
 }
+

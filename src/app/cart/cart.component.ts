@@ -14,7 +14,7 @@ import { ProductDetailService } from 'src/app/product-detail.service';
   providers: [ProductDetailService]
 })
 export class CartComponent {
-  public products: product[] = [];
+  public products: any = [];
   displayedColumns: string[] = ['no', 'name', 'price', 'category', 'action'];
   dataSource = new MatTableDataSource<product>(this.products);
 

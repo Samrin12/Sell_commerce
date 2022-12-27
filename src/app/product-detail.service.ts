@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,8 +19,11 @@ export class ProductDetailService {
   // postPorduct(product: product): Observable<product> {
   //   return this.http.post<product>("http://localhost:3000/api/v1/products/", product)
   // }
-  getProducts(): Observable<product[]> {
-    return this.http.get<product[]>('http://localhost:3000/api/v1/products/');
+  getProducts(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:3000/api/v1/products/');
+  }
+  createProduct(product: product) {
+    return this.http.post('http://localhost:3000/api/v1/products/', product);
   }
 
   // getProducts() {
