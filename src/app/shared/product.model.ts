@@ -1,5 +1,5 @@
 export class product {
-    public no?: number;
+    public id?: number;
     public name?: string;
     public price?: string;
     public category?: string;
@@ -10,8 +10,8 @@ export class product {
     public isBest?: string;
     public dateCreated?: string;
     public origin?: string;
-    constructor(no: number, name: string, price: string, imagePath: string, category: string, psc: string, desc: string, countInStock: number, isBest: string, dateCreated: string, origin: string) {
-        this.no = no;
+    constructor(id: number, name: string, price: string, imagePath: string, category: string, psc: string, desc: string, countInStock: number, isBest: string, dateCreated: string, origin: string) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;

@@ -14,7 +14,7 @@ export class ProductCardListComponent implements OnInit {
   @Input() singleproduct: any;
   @Output() selectedprod = new EventEmitter<void>();
   constructor(private route: Router, private productDetailService: ProductDetailService) {
-
+    console.log(this.products)
   }
   products: any = [];
 

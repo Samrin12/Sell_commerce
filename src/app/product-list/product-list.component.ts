@@ -14,27 +14,32 @@ import { ProductDetailService } from 'src/app/product-detail.service';
 })
 export class ProductListComponent implements AfterViewInit {
   // public products: product[] = [];
-  products: any = this.productDetailService.getProducts();
+  listProducts: any[] = [];
+  products: any[] = [];
 
   //sort and pagination
-  displayedColumns: string[] = ['no', 'name', 'price', 'category', 'action'];
-  dataSource = new MatTableDataSource<product>(this.products);
+  displayedColumns: string[] = ['name', 'price', 'category', 'action'];
+  dataSource = new MatTableDataSource<product>();
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, private route: Router, private productDetailService: ProductDetailService) { }
+  constructor(private _liveAnnouncer: LiveAnnouncer, private route: Router, private productDetailService: ProductDetailService) {
+    console.log(this.listProducts);
+  }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getProd();
+    // console.log(this.listProducts);
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
 
   }
 
-  ngOnInit(): void {
-    // this.products = this.productDetailService.getProducts();
-    this.getProd()
-  }
+  // ngOnInit(): void {
+  //   // this.products = this.productDetailService.getProducts();
+  //   this.getProd();
+  // }
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
@@ -52,8 +57,12 @@ export class ProductListComponent implements AfterViewInit {
   }
 
   private getProd() {
-    this.productDetailService.getProducts().subscribe((prod: string[]) => {
+    this.productDetailService.getProducts().subscribe(prod => {
       this.products = prod;
+      console.log()
+      this.dataSource = new MatTableDataSource<product>(this.products);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     })
   }
 

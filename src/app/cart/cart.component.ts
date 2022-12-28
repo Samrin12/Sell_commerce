@@ -29,7 +29,7 @@ export class CartComponent {
 
   }
   ngOnInit(): void {
-    this.getProd()
+    this.getProd();
   }
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -46,7 +46,7 @@ export class CartComponent {
   }
 
   private getProd() {
-    this.productDetailService.getProducts().subscribe((prod: string[]) => {
+    this.productDetailService.getProducts().subscribe((prod: product[]) => {
       this.products = prod;
     })
   }
