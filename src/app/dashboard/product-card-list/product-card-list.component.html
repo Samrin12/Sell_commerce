@@ -8,8 +8,7 @@
                 <div class="content text-center">
                     <h3>{{prod.name}}</h3>
                     <p>Price: {{prod.price}}</p>
-                    <button mat-stroked-button class="button" (click)="goToDetail()"><a href="" routerLink="'detail'"
-                            (click)="onSelected()">see
+                    <button mat-stroked-button class="button"><a href="" [routerLink]="'/dashboard/'+prod.id">see
                             detail</a></button>
                     <!-- <a href="" [routerLink]="'detail'">see
                         detail</a> -->

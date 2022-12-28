@@ -28,7 +28,7 @@ const appRoute: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'form', component: AddFormComponent },
   { path: 'form/:id', component: AddFormComponent },
-  { path: 'detail', component: ProductDetailComponent }
+  { path: 'dashboard/:id', component: ProductDetailComponent }
 ]
 
 @NgModule({

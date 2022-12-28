@@ -11,8 +11,8 @@ import { ProductDetailService } from 'src/app/product-detail.service';
 })
 
 export class ProductCardListComponent implements OnInit {
-  @Input() singleproduct: any;
-  @Output() selectedprod = new EventEmitter<void>();
+  // @Input() singleproduct: any;
+  // @Output() selectedprod = new EventEmitter<void>();
   constructor(private route: Router, private productDetailService: ProductDetailService) {
     console.log(this.products)
   }
@@ -24,9 +24,9 @@ export class ProductCardListComponent implements OnInit {
     })
   }
 
-  onSelected() {
-    this.selectedprod.emit();
-  }
+  // onSelected() {
+  //   this.selectedprod.emit();
+  // }
   onproductSelection(product: product) {
 
   }

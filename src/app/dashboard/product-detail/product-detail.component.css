@@ -44,4 +44,5 @@ h1 {
 .content p {
     font-size: 16px;
     font-weight: 400;
+    text-transform: capitalize;
 }

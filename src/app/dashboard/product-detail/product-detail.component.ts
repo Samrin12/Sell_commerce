@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { product } from 'src/app/shared/product.model';
 import { ProductDetailService } from 'src/app/product-detail.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 
 @Component({
@@ -10,19 +11,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-detail.component.css'],
   providers: [ProductDetailService]
 })
-export class ProductDetailComponent {
-  products: product[] = []
+export class ProductDetailComponent implements OnInit, OnDestroy {
+  product: product;
+  endSubs$: Subject<any> = new Subject();
   // this.productDetailService.getProducts();
-  constructor(private productDetailService: ProductDetailService, private activeRoute: ActivatedRoute) { }
+  constructor(private Service: ProductDetailService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.products = this.productDetailService.getProducts();
-    // let productNo = this.activeRoute.snapshot.paramMap.get('no');
-    // console.warn(productNo);
-    // productNo && this.productDetailService.getProducts(productNo).subscribe((result) => {
-
-    // })
-
+    this.activeRoute.params.subscribe(params => {
+      if (params.id) {
+        this.fetchProd(params.id);
+      }
+    })
   }
-
+  ngOnDestroy(): void {
+    // this.endSubs$.next();
+    this.endSubs$.complete();
+  }
+  private fetchProd(id: string) {
+    this.Service.getOneProduct(id).pipe(takeUntil(this.endSubs$)).subscribe(resProduct => {
+      this.product = resProduct;
+    })
+  }
 }
