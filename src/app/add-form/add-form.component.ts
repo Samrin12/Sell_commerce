@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { product } from 'src/app/shared/product.model';
 import { ProductDetailService } from 'src/app/product-detail.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-form',
@@ -13,7 +14,8 @@ import { ProductDetailService } from 'src/app/product-detail.service';
 export class AddFormComponent implements OnInit {
   isSubmitted: boolean = false;
   reactiveForm: FormGroup;
-
+  editMode = false;
+  currentProductId: string;
 
   // setting date maximum limit start
   todayDate: any;
@@ -28,7 +30,7 @@ export class AddFormComponent implements OnInit {
   finalday: any;
   // setting date maximum limit end
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private Service: ProductDetailService) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private Service: ProductDetailService, private route: ActivatedRoute) {
 
 
   }
@@ -42,12 +44,13 @@ export class AddFormComponent implements OnInit {
       image: new FormControl(null),
       isBest: new FormControl(null),
       countInStock: new FormControl(null),
-      date: new FormControl(null, Validators.required),
+      dateCreated: new FormControl(null, Validators.required),
       origin: new FormControl('bd', Validators.required)
 
 
     });
-
+    //edit mode check
+    this.checkEditMode();
 
     //setting date maximum limit start
     if (this.currentMonth < 10) {
@@ -82,6 +85,7 @@ export class AddFormComponent implements OnInit {
     console.log(fv.isBest)
 
     const product: any = {
+      id: this.currentProductId,
       name: fv.name,
       shortCode: fv.shortCode,
       category: fv.category,
@@ -90,13 +94,37 @@ export class AddFormComponent implements OnInit {
       image: fv.image,
       countInStock: fv.countInStock,
       isBest: fv.isBest,
-      date: fv.date,
+      dateCreated: fv.dateCreated,
       origin: fv.origin
     }
     this.Service.createProduct(product).subscribe();
+    if (this.editMode) {
+      this.updateProd(product)
+    }
   };
-
-
+  private updateProd(product: any) {
+    this.Service.updateProduct(product).subscribe();
+  }
+  private checkEditMode() {
+    this.route.params.subscribe(params => {
+      if (params.id) {
+        this.editMode = true;
+        this.currentProductId = params.id;
+        this.Service.getOneProduct(params.id).subscribe((p) => {
+          this.reactiveForm.controls.name.setValue(p.name);
+          this.reactiveForm.controls.shortCode.setValue(p.shortCode);
+          this.reactiveForm.controls.category.setValue(p.category);
+          this.reactiveForm.controls.price.setValue(p.price);
+          this.reactiveForm.controls.description.setValue(p.description);
+          this.reactiveForm.controls.image.setValue(p.image);
+          this.reactiveForm.controls.countInStock.setValue(p.countInStock);
+          this.reactiveForm.controls.isBest.setValue(p.isBest);
+          this.reactiveForm.controls.dateCreated.setValue(p.dateCreated);
+          this.reactiveForm.controls.origin.setValue(p.origin);
+        })
+      }
+    })
+  }
 
 }
 

@@ -3,7 +3,7 @@
         <div class="col-md-3 mb-5" *ngFor="let prod of products">
             <section class="card">
                 <div class="image">
-                    <img src="{{prod.imagePath}}" class="img-fluid" alt="">
+                    <img [src]="prod.image" class="img-fluid" alt="">
                 </div>
                 <div class="content text-center">
                     <h3>{{prod.name}}</h3>

@@ -48,7 +48,7 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="action">
                         Action</th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-icon-button color="primary">
+                        <button mat-icon-button color="primary" (click)="updateProd(element.id)">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button mat-icon-button color="warn" (click)="deleteProd(element.id)">
@@ -64,15 +64,6 @@
             <mat-paginator class="pagination" [pageSizeOptions]="[10]" showFirstLastButtons
                 aria-label="Select page of periodic elements">
             </mat-paginator>
-        </div>
-        <div class="row">
-            <div class="col-md-6 m-auto alert text-center">
-                <p>
-                    The pagination and sorting are done properly. But after retrieving data from the database, the rows
-                    are
-                    not appearing.
-                </p>
-            </div>
         </div>
     </div>
 </section>

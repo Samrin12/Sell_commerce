@@ -56,6 +56,10 @@ export class ProductListComponent implements AfterViewInit {
     })
   }
 
+  updateProd(id: string) {
+    this.route.navigateByUrl(`form/${id}`);
+  }
+
   private getProd() {
     this.productDetailService.getProducts().subscribe(prod => {
       this.products = prod;

@@ -22,8 +22,14 @@ export class ProductDetailService {
   getProducts(): Observable<product[]> {
     return this.http.get<product[]>('http://localhost:3000/api/v1/products/');
   }
+  getOneProduct(id: string): Observable<product> {
+    return this.http.get<product>('http://localhost:3000/api/v1/products/' + id);
+  }
   createProduct(product: product) {
     return this.http.post('http://localhost:3000/api/v1/products/', product);
+  }
+  updateProduct(product: product) {
+    return this.http.put('http://localhost:3000/api/v1/products/' + product.id, product);
   }
   deleteProduct(id: string): Observable<Object> {
     return this.http.delete<object>(`http://localhost:3000/api/v1/products/${id}`)

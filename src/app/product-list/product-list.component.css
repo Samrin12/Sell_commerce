@@ -29,6 +29,10 @@ h1 {
 
 }
 
+td {
+    text-transform: capitalize;
+}
+
 .add_btn {
     color: white;
     background-color: #9574ad;

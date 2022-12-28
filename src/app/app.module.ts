@@ -27,6 +27,7 @@ const appRoute: Routes = [
   { path: 'product', component: ProductListComponent },
   { path: 'cart', component: CartComponent },
   { path: 'form', component: AddFormComponent },
+  { path: 'form/:id', component: AddFormComponent },
   { path: 'detail', component: ProductDetailComponent }
 ]
 
