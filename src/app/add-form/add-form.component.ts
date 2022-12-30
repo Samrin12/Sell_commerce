@@ -97,11 +97,17 @@ export class AddFormComponent implements OnInit {
       dateCreated: fv.dateCreated,
       origin: fv.origin
     }
-    this.Service.createProduct(product).subscribe();
+
     if (this.editMode) {
-      this.updateProd(product)
+      this.updateProd(product);
+    }
+    else {
+      this.addProd(product);
     }
   };
+  private addProd(product) {
+    this.Service.createProduct(product).subscribe();
+  }
   private updateProd(product: any) {
     this.Service.updateProduct(product).subscribe();
   }
