@@ -26,15 +26,17 @@
 
 .card .content p {
     text-transform: uppercase;
+    margin-bottom: 25px;
+    font-size: 18px;
 }
 
-.card .content .button {
+/* .card .content .button {
     color: #fff;
     background: #9574ad;
     border: 1px solid #9574ad;
     text-transform: uppercase;
     margin-top: 10px;
-}
+} */
 
 .card .content a {
     color: #fff;
@@ -42,8 +44,10 @@
     background: #9574ad;
     border: 1px solid #9574ad;
     text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 10;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 17px;
 }
 
 
